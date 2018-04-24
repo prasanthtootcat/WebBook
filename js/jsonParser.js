@@ -13,7 +13,7 @@ $(document).ready(function(){
 
                 var l1 = document.createElement("li");
                 var ul1 = document.createElement("ul");
-                l1.className = "list-group-item";
+                l1.className = "bg-light list-group-item grade";
                 ul1.className = "list-group";
                 var grade = document.createTextNode(val.name);
                 ul1.appendChild(grade);
@@ -23,20 +23,22 @@ $(document).ready(function(){
 
                     var l2 = document.createElement("li");
                     var ul2 = document.createElement("ul");
-                    l2.className = "list-group-item";
+                    l2.className = "list-group-item subject";
                     ul2.className = "list-group";
                     var subject = document.createTextNode(val.name);
                     ul2.appendChild(subject);
                     l2.appendChild(ul2);
+                    l2.style.display = "none";
 
-                    $.each(val.chapterList,function(key,val){
+                    $.each(val.chapterList,function(key,val) {
 
                         var l3 = document.createElement("li");
-                        l3.className = "list-group-item topic";
+                        l3.className = "bg-light list-group-item topic";
                         l3.setAttribute("id",count);
                         ++count;
                         var topic = document.createTextNode(val.name);
                         l3.appendChild(topic);
+                        l3.style.display = "none";
                         var temp =[];
 
                         $.each(val.questionList,function(key,val){
@@ -58,11 +60,28 @@ $(document).ready(function(){
         });
     });
 
-    $(document).on("click","li.topic",function () {
+    $(document).on("click","li.topic",function (event) {
 
         var id = $(this).attr('id');
-        textDiv.innerHTML = questionAnswers[id];
+        var text = "";
+        for(var i=0; i<questionAnswers[id].length; i++)
+            text += questionAnswers[id][i];
+        textDiv.innerHTML = text;
+        event.stopPropagation();
 
     });
 
+    $(document).on("click","li.grade",function (event) {
+
+        $("li.subject").toggle();
+        event.stopPropagation();
+
+    });
+
+    $(document).on("click","li.subject",function (event) {
+
+        $("li.topic").toggle();
+        event.stopPropagation();
+
+    });
 });
