@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login page</title>
+
+    <!-- bootstrap v4.1.0 CSS cdn -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+</head>
+<body style="background-image: url('img/bg.jpg')">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="mt-5 col-md-5 col-sm-8 mx-auto">
+                        <div class="card rounded-10">
+                            <div class="card-header">
+                                <h3 class="mb-0">Login</h3>
+                            </div>
+                            <div class="card-body">
+                                <form class="form" role="form" id="formLogin">
+                                    <div class="form-group">
+                                        <label for="username">Username</label>
+                                        <input type="text" class="form-control form-control-lg rounded-5" id="username" required>
+                                    </div>
+                                    <div class="form-group">
+                                         <label>Password</label>
+                                         <input type="password" class="form-control form-control-lg rounded-5" id="password" required>
+                                    </div>
+                                </form>
+                                <button type="submit" class="btn btn-secondary btn-lg float-right" id="btnLogin" onclick="validate()">Login</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

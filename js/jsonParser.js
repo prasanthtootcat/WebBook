@@ -73,14 +73,15 @@ $(document).ready(function(){
 
     $(document).on("click","li.grade",function (event) {
 
-        $("li.subject").toggle();
+        $("li.subject").toggle('slow');
+        $("li.topic").hide();
         event.stopPropagation();
 
     });
 
     $(document).on("click","li.subject",function (event) {
 
-        $("li.topic").toggle();
+        $("li.topic").toggle('slow');
         event.stopPropagation();
 
     });
