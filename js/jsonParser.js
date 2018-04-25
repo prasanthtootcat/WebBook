@@ -5,6 +5,7 @@ var count = 0;
 
 $(document).ready(function(){
 
+    //Parsing JSON via AJAX calls
     $.getJSON("json.txt",function(data){
 
         $.each(data,function(key,val){
@@ -60,6 +61,8 @@ $(document).ready(function(){
         });
     });
 
+
+    // Controls Index of the book part
     $(document).on("click","li.topic",function (event) {
 
         var id = $(this).attr('id');
